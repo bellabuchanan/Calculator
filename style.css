@@ -41,17 +41,24 @@ h1 {
     grid-gap: 5px;
     padding-top: 10px;
     height: 80%;
+    font-family: 'Orbitron';
     
 }
 
-.btn { 
+button {
+    font-family: 'Orbitron';
+    font-size: 16px;
     color:black;
     background: rgba(211, 207, 207, 0.329);
     border: 3.5px solid #050505;
     border-radius: 30%;
     text-align: center;
     width: 100%;
-    height: 100%;  
+    height: 100%
+}
+
+.btn { 
+    ;  
 }
 
 .is-equals {
