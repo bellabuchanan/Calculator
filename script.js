@@ -7,10 +7,11 @@ let content = "";
 // add clicks for numbers and operators
 numbers.forEach(num => {
     num.addEventListener('click', function(e){
+        
         content += e.target.value;
         display.textContent = content;
-        
         console.log('clicking');
+        
     });
 });
 
@@ -28,16 +29,55 @@ back.addEventListener('click',function(e){
     display.textContent=content;
 });
 
+
+// equals buttonn calculations 
+const equ =document.querySelector(".is-equals");
+equ.addEventListener('click', function(e){
+    
+    let newstring = content.split(" ");
+    console.log(newstring);
+
+    let operator = ops(newstring[1]);
+    console.log(operator);
+
+    let answer = operator(newstring[0],newstring[2]);
+    console.log(answer);
+})
+
 // operations
-function add(a,b){
-    return a+b
+function add(x,y) {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    return x + y
 };
-function subtract(a,b){
-    return a-b
+function subtract(x,y) {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    return x - y
 };
-function multiply(a,b){
-    return a*b
+function multiply(x,y) {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    return x * y
 };
-function divide(a,b){
-    return a/b
+function divide(x,y) {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    return x/y
 };
+
+
+// function to extract the operation to be performed
+function ops(str) {
+    switch(str) {
+        case "+":
+            return add;
+            console.log('adding')
+        case "-":
+            return subtract;
+        case "/":
+            return divide;
+        case "*":
+            return multiply;
+}};
+
